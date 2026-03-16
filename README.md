@@ -8,7 +8,7 @@ Tela de Menu:
 
 Tela de Perfil:
 
-<img width="230" height="480" alt="image" src="https://github.com/user-attachments/assets/6b3b128f-2ecb-443f-bb68-a5e384537514" />
+<img width="224" height="486" alt="image" src="https://github.com/user-attachments/assets/c8c88c0c-efd6-43d2-aa22-a6063dd13572" />
 
 Tela de Pedidos:
 
