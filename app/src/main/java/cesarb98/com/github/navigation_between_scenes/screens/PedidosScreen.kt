@@ -17,7 +17,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController) {
+// A função agora aceita o parâmetro 'cliente: String?'.
+// Ele é opcional para manter a compatibilidade com a rota 'pedidos' sem argumentos.
+fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController, cliente: String?) {
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -25,7 +27,9 @@ fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController) {
             .padding(32.dp)
     ) {
         Text(
-            text = "PEDIDOS",
+            // O título da tela agora concatena dinamicamente o nome do cliente.
+            // Se nenhum nome for passado, o valor padrão definido no NavHost será exibido.
+            text = "PEDIDOS - $cliente",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White

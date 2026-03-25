@@ -42,7 +42,10 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
                 .align(Alignment.Center)
         ) {
             Button(
-                onClick = { navController.navigate("perfil") },
+                //Agora a rota passa a enviar um dado real ("Fulano de Tal").
+                //Assim, o NavHost identifica o parâmetro e entrega a tela de destino.
+                onClick = { navController.navigate("perfil/Fulano de Tal/27") },
+                // adição de envio de dados obrigatórios na ordem definida pela rota
                 colors = ButtonDefaults.buttonColors(Color.White),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {
@@ -54,7 +57,10 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("pedidos") },
+                // A navegação foi atualizada para enviar o parâmetro opcional 'cliente'.
+                // Agora, em vez de apenas chamar a rota "pedidos", passamos o valor "Cliente XPTO"
+                // utilizando a sintaxe de query parameter (?cliente=valor).
+                onClick = { navController.navigate("pedidos?cliente=Cliente XPTO") },
                 colors = ButtonDefaults.buttonColors(Color.White),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {

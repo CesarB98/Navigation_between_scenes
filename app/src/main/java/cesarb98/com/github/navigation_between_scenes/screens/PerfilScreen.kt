@@ -17,7 +17,14 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun PerfilScreen(modifier: Modifier = Modifier, navController: NavController) {
+fun PerfilScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    // O parâmetro 'nome' recebe o dado extraído da rota na MainActivity.
+    nome: String,
+    // agora é necessário o parametro idade também.
+    idade: Int
+) {
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -25,7 +32,10 @@ fun PerfilScreen(modifier: Modifier = Modifier, navController: NavController) {
             .padding(32.dp)
     ) {
         Text(
-            text = "PERFIL",
+            // O texto agora é dinâmico, utilizando interpolação de string ($nome)
+            // para exibir o nome específico do usuário navegado.
+            text = "PERFIL - $nome tem $idade anos",
+            // PerfilScreen: Agora exibe nome e idade dinamicamente
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
